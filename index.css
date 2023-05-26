@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  /* background-color: black; */
+  padding: 40px;
+  width: 460px;
+  font-size: 1rem;
+  font-family: monospace;
+  color: #6B6B6B;
+  border-radius: .5rem;
+
+  & * {
+    display: block;
+    width: 100%;
+  }
+ 
+  & label {
+    margin-block-end: .6rem;
+    color: hsl(0deg 0% 80.14%);
+  }
+
+  & input, & button {border: none;}
+  
+  & input {
+    color: hsl(0deg 0% 80.14%);
+    border-radius: .4rem;
+    padding-block: .8rem;
+    padding-inline: .8rem;
+    margin-block-end: 1rem;
+  }
+    
+  & input:focus {
+    transition: .3s ease;
+    outline: 1px hsl(0deg 0% 80.14%) solid;
+    box-shadow: 0 12px 80px hsla(0deg, 0%, 100%, 25%);
+    /* animation: myAnim 1s ease 0s infinite forwards; */
+  }
+
+  & input:valid {
+    box-shadow: 0 10px 80px hsla(0deg, 0%, 100%, 10%);
+    outline: 1px hsl(0deg 0% 80.14%) solid;
+  }
+
+  & input:not(:placeholder-shown):not(:focus):valid {
+    outline: 1px hsl(0deg 0% 80.14%) solid;
+  }
+
+  & input:not(:placeholder-shown):not(:focus):invalid {
+    outline: 2px solid red;
+  }
+
+  & form:invalid button[type="submit"] {
+    cursor: not-allowed;
+    background-color: hsl(0deg 0% 23.14%);
+  }
+
+  & form:valid button[type="submit"] {
+    cursor: pointer;
+    color: hsl(0deg 0% 10.14%);
+    background-color: hsl(0deg 0% 83.14%);
+  }
+
+  & button[type="submit"]{
+    color: hsl(0deg 0% 80.14%);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: block;
+    border-radius: .4rem;
+    margin-block-start: 2rem;
+    padding-block: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+ :root {
+    color-scheme: dark;
+ }
+}
+@media (prefers-color-scheme: light) {
+ :root {
+    color-scheme: light ;
+ }
+}
